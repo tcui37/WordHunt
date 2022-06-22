@@ -66,7 +66,7 @@ def generate_words(str):
 
 
 if __name__ == '__main__':
-    str = "wfgbtmiarhdiafom".lower()
+    str = "pyiyrjsherteiesn".lower()
     # grid = arr_to_grid(str)
     # paths = []
     # start = (0,0)
