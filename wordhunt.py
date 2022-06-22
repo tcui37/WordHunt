@@ -13,11 +13,13 @@ def arr_to_grid(str):
         grid[row][col] = c
     return grid
 
-# returns all words from (i,j) with seen {}
+# in:
 # cord: i,j
 # seen: set of cord
 # curr_path: list of cord
 # paths: list of paths
+# out: returns all words from (i,j) with seen {}
+
 def all_paths(cord,grid,seen=set(),curr_path=[],paths=[],limit=8):
     seen.add(cord)
     if len(curr_path) >= 3:
@@ -26,11 +28,12 @@ def all_paths(cord,grid,seen=set(),curr_path=[],paths=[],limit=8):
         # skip neighbor if its in our path
         if neighbor in seen:
             continue
-        if len(curr_path) > 8:
+        if len(curr_path) > 9:
             continue
         all_paths(neighbor,grid,seen.copy(),curr_path + [neighbor],paths)
 
 
+# in: (i,j) cord
 #returns set of 8 neighboring cords of cord (i,j)
 def get_neighbors(cord):
     return_set = set()
@@ -40,14 +43,17 @@ def get_neighbors(cord):
             return_set.add(new_cord)
     return return_set
     
-# input: path of cords, 4x4 grid
+# input: list of cords, 4x4 grid
+# out: a string from corresponding cords
 def path_to_word(path,grid):
     str = ""
     for row,col in path:
         str += grid[row][col]
     return str
 
-#input 4x4 2d array of lowercase characters
+# input 16 letter string wrapped for a 4x4 board
+# out: list
+
 def generate_words(str):
     grid = arr_to_grid(str)
     paths = []
@@ -66,7 +72,7 @@ def generate_words(str):
 
 
 if __name__ == '__main__':
-    str = "pyiyrjsherteiesn".lower()
+    str = "lshkanorreotmept".lower()
     # grid = arr_to_grid(str)
     # paths = []
     # start = (0,0)
