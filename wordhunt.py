@@ -72,13 +72,14 @@ def generate_words(str):
 
 
 if __name__ == '__main__':
-    str = "lshkanorreotmept".lower()
+    str = "iogaygbrawrlahnn".lower()
     # grid = arr_to_grid(str)
     # paths = []
     # start = (0,0)
     # all_paths(start,grid,set(),[],paths)
     # path1 = paths[4]
     # print(path_to_word(path1,grid))
-    print(generate_words(str))
     # print("here" in english_words_lower_alpha_set)
+    # print(generate_words(str))
+    print(get_neighbors((2,0)))
     pass
